@@ -28,11 +28,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build App
-        run: npm run build
+      - name: Auto-detect Project Directory and Build
+        run: |
+          # Find where package.json actually lives
+          TARGET_DIR=$(find . -name package.json -not -path "*/node_modules/*" -exec dirname {} \;)
+          echo "Found package.json in directory: $TARGET_DIR"
+          cd "$TARGET_DIR"
+          
+          # Run the installation and compilation inside that directory
+          npm install
+          npm run build
+          
+          # Move the compiled assets to a unified global dist folder for deployment
+          mkdir -p ../dist
+          cp -r dist/* ../dist/ || cp -r build/* ../dist/ || echo "Using root distribution"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
