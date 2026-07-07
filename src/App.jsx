@@ -7,7 +7,7 @@ import { AuthProvider, useAuth } from '@/lib/builders/AuthContext';
 import UserNotRegisteredError from '@/components/ui/UserNotRegisteredError';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 // Add page imports here
-import Home from './pages/Home';
+import Home from '@/pages/Home';
 import ProtectedRoute from '@/components/ui/ProtectedRoute';
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
