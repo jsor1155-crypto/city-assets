@@ -2,7 +2,7 @@ name: Deploy Vite React App
 
 on:
   push:
-    branches: ["main"] # If your default branch is called master, change this to "master"
+    branches: ["main", "master"]
 
 permissions:
   contents: read
@@ -27,13 +27,15 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
+        working-directory: ./city-assets
         run: npm install
       - name: Build App
+        working-directory: ./city-assets
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./city-assets/dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
