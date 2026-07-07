@@ -1,0 +1,43 @@
+{
+  "name": "CityState",
+  "type": "object",
+  "properties": {
+    "city_name": {
+      "type": "string",
+      "default": "New City"
+    },
+    "money": {
+      "type": "number",
+      "default": 50000
+    },
+    "population": {
+      "type": "number",
+      "default": 0
+    },
+    "happiness": {
+      "type": "number",
+      "default": 50
+    },
+    "power": {
+      "type": "number",
+      "default": 0
+    },
+    "power_capacity": {
+      "type": "number",
+      "default": 0
+    },
+    "grid_data": {
+      "type": "string"
+    },
+    "road_data": {
+      "type": "string"
+    },
+    "tick_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "city_name"
+  ]
+}
