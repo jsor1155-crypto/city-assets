@@ -14,15 +14,15 @@ import {
   isRoad,
   GRID_COLS,
   GRID_ROWS,
-} from "@/lib/gameConfig";
-import { tileToWorld } from "@/lib/buildingFactory";
+} from '@/lib/builders/gameConfig';
+import { tileToWorld } from '@/lib/builders/BuildingFactory';
 import {
   createEmptyRoadData,
   serializeRoadData,
   deserializeRoadData,
   isNearRoad,
   isBuildingOnRoad,
-} from "@/lib/roadNetwork";
+} from '@/lib/builders/roadNetwork';
 import StatsBar from "@/components/city/StatsBar";
 import BuildToolbar from "@/components/city/BuildToolbar";
 import RoadToolbar from "@/components/city/RoadToolbar";
