@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { AuthProvider, useAuth } from '../../lib/builders/AuthContext';
 import { Outlet } from 'react-router-dom';
 import { useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
